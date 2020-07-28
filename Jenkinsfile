@@ -12,7 +12,7 @@ pipeline {
 	parameters {
 		// BRANCH NAME
 		string(
-				name: "feature/jenkins",
+				name: "master",
 				defaultValue: "${env.JOB_BASE_NAME.replaceAll('%2F', '/')}",
 				description: "temporary branch"
 		)
