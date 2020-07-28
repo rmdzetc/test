@@ -5,8 +5,6 @@ WORKDIR /usr/src/app
 
 #COPY settings.xml /usr/share/maven/ref/
 ADD pom.xml /usr/src/app
-COPY lib /tmp/lib
-
 ADD . /usr/src/app
 ADD ./src/test/java/karate-config.js /usr/src/app/src/test/java/karate-config.js
 
