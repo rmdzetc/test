@@ -43,7 +43,7 @@ pipeline {
 			timeout(20) {
 			sh 'echo "Logging vars"'
 			sh 'echo $HOME'
-			sh 'echo pwd'
+			sh 'pwd'
 			sh buildCMD
 
 				}
