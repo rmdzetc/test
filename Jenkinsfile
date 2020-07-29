@@ -33,7 +33,7 @@ pipeline {
 					filename 'ci.Dockerfile'
 					dir '.'
 					additionalBuildArgs ''
-					args ' -v $HOME/.m2:/home/jenkins/.m2 -v /tmp:/tmp'
+					args ' -v ${PWD}:/usr/src/app -v $HOME/.m2:/home/jenkins/.m2 -v /tmp:/tmp'
 }
 		}
 			
@@ -41,9 +41,6 @@ pipeline {
 		steps {
 			
 			timeout(20) {
-			sh 'echo "Logging vars"'
-			sh 'echo $HOME'
-			sh 'pwd'
 			sh buildCMD
 
 				}
@@ -54,7 +51,7 @@ pipeline {
 			always {
 				// Publish HTML report
 				publishHTML([
-						reportDir: "/usr/src/app/target/",
+						reportDir: "target",
 						reportFiles : "overview-failures.html",
 						reportTitles : "",
 						reportName  : "Test failures report",
