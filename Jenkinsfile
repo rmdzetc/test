@@ -41,6 +41,7 @@ pipeline {
 		steps {
 			
 			timeout(20) {
+			sh 'echo "Logging vars"'
 			sh 'echo $HOME'
 			sh 'echo pwd'
 			sh buildCMD
@@ -53,7 +54,7 @@ pipeline {
 			always {
 				// Publish HTML report
 				publishHTML([
-						reportDir: "target",
+						reportDir: "/usr/src/app/target/",
 						reportFiles : "overview-failures.html",
 						reportTitles : "",
 						reportName  : "Test failures report",
