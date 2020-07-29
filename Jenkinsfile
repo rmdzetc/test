@@ -36,16 +36,20 @@ pipeline {
 					args ' -v $HOME/.m2:/home/jenkins/.m2 -v /tmp:/tmp'
 }
 		}
+			
 
 		steps {
+			echo "HOME"
+			echo $HOME
 			timeout(20) {
-
+			
 			sh buildCMD
 
 				}
 
 			}
-
+			echo "pwd"
+			echo pwd
 			post {
 			always {
 				// Publish HTML report
