@@ -51,8 +51,8 @@ pipeline {
 			always {
 				// Publish HTML report
 				publishHTML([
-						reportDir: "target",
-						reportFiles : "overview-failures.html",
+						reportDir: "",
+						reportFiles : "testrunner.html",
 						reportTitles : "",
 						reportName  : "Test failures report",
 						keepAll : true,
