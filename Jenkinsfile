@@ -39,15 +39,16 @@ pipeline {
 			
 
 		steps {
-			sh 'echo $HOME'
-			timeout(20) {
 			
+			timeout(20) {
+			sh 'echo $HOME'
+			sh 'echo pwd'
 			sh buildCMD
 
 				}
 
 			}
-			sh 'echo pwd'
+
 			post {
 			always {
 				// Publish HTML report
