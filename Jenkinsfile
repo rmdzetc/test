@@ -33,7 +33,7 @@ pipeline {
 					filename 'ci.Dockerfile'
 					dir '.'
 					additionalBuildArgs ''
-					args ' -v ${PWD}:/usr/src/app -v $HOME/.m2:/home/jenkins/.m2 -v /tmp:/tmp'
+					args ' -v $PWD:/usr/src/app -v $HOME/.m2:/home/jenkins/.m2 -v /tmp:/tmp'
 }
 		}
 			
