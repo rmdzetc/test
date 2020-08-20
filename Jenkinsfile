@@ -51,8 +51,8 @@ pipeline {
 			always {
 				// Publish HTML report
 				publishHTML([
-						reportDir: "",
-						reportFiles : "testrunner.html",
+						reportDir: "target/surefire-reports",
+						reportFiles : "TEST-examples.weatherStations.xml",
 						reportTitles : "",
 						reportName  : "Test failures report",
 						keepAll : true,
