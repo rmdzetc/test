@@ -12,4 +12,4 @@ RUN mvn -B -f /tmp/pom.xml -s /usr/share/maven/ref/settings-docker.xml prepare-p
 RUN mvn verify clean
 RUN mvn clean test -B -X
 
-#CMD ["/usr/src/app/maven_runner.sh"]
+CMD ["/usr/src/app/maven_runner.sh"]
